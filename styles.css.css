@@ -1,0 +1,251 @@
+:root {
+  --primary: #ff7eb3;
+  --primary-dark: #c06c84;
+  --secondary: #ff758c;
+  --dark: #0f0f12;
+  --darker: #18181b;
+}
+
+body {
+  margin: 0;
+  background: var(--dark);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero section com desfoque */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Seções */
+.section {
+  padding: 8rem 1rem;
+  text-align: center;
+}
+
+/* Seções com fundo branco */
+.section-white {
+  background: #fff;
+  color: var(--darker);
+  padding: 8rem 2rem;
+}
+
+.section-white .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Títulos centralizados */
+.section-title {
+  text-align: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+/* Botão */
+.btn-3d {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 0 var(--primary-dark);
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  display: inline-block;
+  text-align: center;
+  min-width: 220px;
+  margin: 0 auto;
+}
+
+.btn-3d:hover {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 var(--primary-dark);
+}
+
+/* Cards */
+.card-dark {
+  background: var(--darker);
+  color: #fff;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: 0 4px 24px rgba(255, 87, 136, 0.1);
+  border: 1px solid #2d2d2d;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.card-dark:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(255, 126, 179, 0.2);
+  border-color: var(--primary);
+}
+
+/* Grids */
+.stats-grid,
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Formulário */
+.responsive-iframe-container {
+  position: relative;
+  width: 100%;
+  padding-top: 65%;
+  min-height: 400px;
+  background: #111;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(255, 87, 136, 0.1);
+  border: 2px solid #ff7eb3;
+  margin: 3rem auto;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* WhatsApp button */
+.whatsapp-btn-big {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #fff;
+  padding: 1.2rem 2.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 0 #0f5d44;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.whatsapp-btn-big:hover {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #0f5d44;
+}
+
+/* Animações */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* Estilo dos números */
+.stat-number {
+  font-size: 2.8rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .section {
+    padding: 6rem 1rem;
+  }
+  
+  .section-white {
+    padding: 6rem 1.5rem;
+  }
+  
+  .btn-3d {
+    width: 100%;
+    display: block;
+  }
+  
+  .stats-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.2rem;
+  }
+  
+  .hero::before {
+    filter: blur(3px);
+  }
+}
